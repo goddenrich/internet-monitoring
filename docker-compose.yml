@@ -22,8 +22,9 @@ services:
     ports:
       - 9090:9090
     links:
-      - ping:ping
+      - blackbox:blackbox
       - speedtest:speedtest
+      - hub:hub
     networks:
       - back-tier
 
@@ -42,7 +43,31 @@ services:
       - back-tier
       - front-tier
  
+  hub:
+    tty: true
+    stdin_open: true
+    expose:
+      - 19092
+    ports:
+      - 19092:19092
+    image: jamesnetherton/homehub-metrics-exporter
+    command:
+      - '--hub-password='
+    networks:
+      - back-tier
+
   ping:
+    tty: true
+    stdin_open: true
+    expose:
+      - 9346
+    ports:
+      - 9346:9346
+    image: goddenrich/ping-exporter
+    networks:
+      - back-tier
+
+  blackbox:
     tty: true
     stdin_open: true
     expose:
@@ -68,18 +93,6 @@ services:
     restart: always
     networks:
       - back-tier
-
-  sonos:
-    tty: true
-    stdin_open: true
-    expose: 
-      - 1915
-    ports:
-      - 1915:1915
-    image: maxandersen/sonos_exporter
-    command:
-      - '--address=0.0.0.0:1915'
-    network_mode: host
 
   nodeexp:
     privileged: true

@@ -24,35 +24,43 @@
       "colorBackground": false,
       "colorValue": false,
       "colors": [
-        "#299c46",
+        "#d44a3a",
         "rgba(237, 129, 40, 0.89)",
-        "#d44a3a"
+        "#299c46"
       ],
       "datasource": "prometheus",
-      "format": "none",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "format": "short",
       "gauge": {
-        "maxValue": 50,
-        "minValue": 0,
+        "maxValue": 7,
+        "minValue": null,
         "show": true,
         "thresholdLabels": false,
         "thresholdMarkers": true
       },
       "gridPos": {
-        "h": 9,
+        "h": 5,
         "w": 6,
         "x": 0,
         "y": 0
       },
-      "id": 8,
+      "id": 21,
       "interval": null,
       "links": [],
       "mappingType": 1,
       "mappingTypes": [
         {
+          "$$hashKey": "object:2254",
           "name": "value to text",
           "value": 1
         },
         {
+          "$$hashKey": "object:2255",
           "name": "range to text",
           "value": 2
         }
@@ -60,7 +68,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "postfix": "",
+      "postfix": " Mbps",
       "postfixFontSize": "50%",
       "prefix": "",
       "prefixFontSize": "50%",
@@ -82,16 +90,19 @@
         {
           "expr": "speedtest_bits_per_second{direction=\"downstream\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
+          "legendFormat": "",
           "refId": "A"
         }
       ],
-      "thresholds": "25,40",
-      "title": "Download",
+      "thresholds": "1,2",
+      "title": "Download speed",
       "type": "singlestat",
-      "valueFontSize": "80%",
+      "valueFontSize": "50%",
       "valueMaps": [
         {
+          "$$hashKey": "object:2257",
           "op": "=",
           "text": "N/A",
           "value": "null"
@@ -104,35 +115,43 @@
       "colorBackground": false,
       "colorValue": false,
       "colors": [
-        "#299c46",
+        "#d44a3a",
         "rgba(237, 129, 40, 0.89)",
-        "#d44a3a"
+        "#299c46"
       ],
       "datasource": "prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
-        "maxValue": 20,
-        "minValue": 0,
+        "maxValue": 1,
+        "minValue": null,
         "show": true,
         "thresholdLabels": false,
         "thresholdMarkers": true
       },
       "gridPos": {
-        "h": 9,
+        "h": 5,
         "w": 6,
         "x": 6,
         "y": 0
       },
-      "id": 10,
+      "id": 22,
       "interval": null,
       "links": [],
       "mappingType": 1,
       "mappingTypes": [
         {
+          "$$hashKey": "object:2171",
           "name": "value to text",
           "value": 1
         },
         {
+          "$$hashKey": "object:2172",
           "name": "range to text",
           "value": 2
         }
@@ -140,7 +159,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "postfix": "",
+      "postfix": " Mbps",
       "postfixFontSize": "50%",
       "prefix": "",
       "prefixFontSize": "50%",
@@ -162,16 +181,19 @@
         {
           "expr": "speedtest_bits_per_second{direction=\"upstream\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
+          "legendFormat": "",
           "refId": "A"
         }
       ],
-      "thresholds": "5,10",
-      "title": "Upload",
+      "thresholds": "0.25,0.5",
+      "title": "Upload speed",
       "type": "singlestat",
-      "valueFontSize": "80%",
+      "valueFontSize": "50%",
       "valueMaps": [
         {
+          "$$hashKey": "object:2174",
           "op": "=",
           "text": "N/A",
           "value": "null"
@@ -184,22 +206,28 @@
       "colorBackground": false,
       "colorValue": false,
       "colors": [
-        "#d44a3a",
+        "#299c46",
         "rgba(237, 129, 40, 0.89)",
-        "#299c46"
+        "#d44a3a"
       ],
       "datasource": "prometheus",
-      "decimals": 2,
+      "decimals": 0,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "ms",
       "gauge": {
-        "maxValue": 100,
+        "maxValue": 500,
         "minValue": 0,
         "show": true,
         "thresholdLabels": false,
         "thresholdMarkers": true
       },
       "gridPos": {
-        "h": 9,
+        "h": 5,
         "w": 12,
         "x": 12,
         "y": 0
@@ -210,10 +238,12 @@
       "mappingType": 1,
       "mappingTypes": [
         {
+          "$$hashKey": "object:2364",
           "name": "value to text",
           "value": 1
         },
         {
+          "$$hashKey": "object:2365",
           "name": "range to text",
           "value": 2
         }
@@ -247,13 +277,13 @@
           "refId": "A"
         }
       ],
-      "thresholds": "",
+      "thresholds": "100, 200, 500",
       "title": "speedtest ping",
-      "transparent": false,
       "type": "singlestat",
-      "valueFontSize": "80%",
+      "valueFontSize": "50%",
       "valueMaps": [
         {
+          "$$hashKey": "object:2367",
           "op": "=",
           "text": "N/A",
           "value": "null"
@@ -267,14 +297,22 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 1,
+      "fillGradient": 0,
       "gridPos": {
-        "h": 9,
+        "h": 6,
         "w": 12,
         "x": 0,
-        "y": 9
+        "y": 5
       },
-      "id": 6,
+      "hiddenSeries": false,
+      "id": 15,
       "legend": {
         "avg": false,
         "current": false,
@@ -286,30 +324,49 @@
       },
       "lines": true,
       "linewidth": 1,
-      "links": [],
       "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
       "percentage": false,
-      "pointradius": 5,
+      "pluginVersion": "7.2.1",
+      "pointradius": 2,
       "points": false,
       "renderer": "flot",
-      "repeat": null,
-      "seriesOverrides": [],
+      "seriesOverrides": [
+        {
+          "$$hashKey": "object:862",
+          "alias": "success",
+          "yaxis": 2
+        }
+      ],
       "spaceLength": 10,
       "stack": false,
       "steppedLine": false,
       "targets": [
         {
-          "expr": "speedtest_bits_per_second{}",
-          "format": "time_series",
-          "intervalFactor": 1,
-          "legendFormat": "{{direction}}",
-          "refId": "A"
+          "expr": "sum (sum_over_time(ping_packets_failed{routing=\"local\"}[1h])) / sum (sum_over_time(ping_packets_total{routing=\"local\"}[1h]))",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "percent loss",
+          "refId": "B"
         }
       ],
-      "thresholds": [],
+      "thresholds": [
+        {
+          "$$hashKey": "object:200",
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "value": 0.005,
+          "yaxis": "left"
+        }
+      ],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
-      "title": "speedtest",
+      "title": "package loss local",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -325,14 +382,252 @@
       },
       "yaxes": [
         {
-          "format": "short",
-          "label": null,
+          "$$hashKey": "object:511",
+          "decimals": 2,
+          "format": "percentunit",
+          "label": "",
           "logBase": 1,
           "max": null,
           "min": null,
           "show": true
         },
         {
+          "$$hashKey": "object:512",
+          "format": "short",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 6,
+        "w": 12,
+        "x": 12,
+        "y": 5
+      },
+      "hiddenSeries": false,
+      "id": 18,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.2.1",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "$$hashKey": "object:862",
+          "alias": "success",
+          "yaxis": 2
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "sum (sum_over_time(ping_packets_failed{routing=\"external\"}[1h])) / sum (sum_over_time(ping_packets_total{routing=\"external\"}[1h]))",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "percent loss",
+          "refId": "B"
+        }
+      ],
+      "thresholds": [
+        {
+          "$$hashKey": "object:200",
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "value": 0.02,
+          "yaxis": "left"
+        }
+      ],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "package loss external",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:511",
+          "decimals": 2,
+          "format": "percentunit",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:512",
+          "format": "short",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 0,
+        "y": 11
+      },
+      "hiddenSeries": false,
+      "id": 16,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "maxPerRow": 12,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.2.1",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeatDirection": "h",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "sum (quantile_over_time(0.5, probe_http_duration_seconds{routing=\"external\"}[1h]))",
+          "interval": "",
+          "legendFormat": "50%",
+          "refId": "B"
+        },
+        {
+          "expr": "sum (quantile_over_time(0.9, probe_http_duration_seconds{routing=\"external\"}[1h]))",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "90%",
+          "refId": "A"
+        },
+        {
+          "expr": "sum (quantile_over_time(0.95, probe_http_duration_seconds{routing=\"external\"}[1h]))",
+          "interval": "",
+          "legendFormat": "95%",
+          "refId": "C"
+        },
+        {
+          "expr": "sum (quantile_over_time(0.99, probe_http_duration_seconds{routing=\"external\"}[1h]))",
+          "interval": "",
+          "legendFormat": "99%",
+          "refId": "D"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "http quantiles external",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:761",
+          "format": "short",
+          "label": "Seconds",
+          "logBase": 2,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:762",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -347,79 +642,26 @@
       }
     },
     {
-      "cards": {
-        "cardMinWidth": 5,
-        "cardRound": null,
-        "cardSpacing": 2
-      },
-      "color": {
-        "cardColor": "#b4ff00",
-        "colorScale": "sqrt",
-        "colorScheme": "interpolateGnYlRd",
-        "defaultColor": "#757575",
-        "exponent": 0.5,
-        "mode": "spectrum",
-        "thresholds": []
-      },
-      "data": {
-        "decimals": null,
-        "unitFormat": "short"
-      },
-      "datasource": "prometheus",
-      "gridPos": {
-        "h": 9,
-        "w": 12,
-        "x": 12,
-        "y": 9
-      },
-      "highlightCards": true,
-      "id": 14,
-      "legend": {
-        "show": false
-      },
-      "links": [],
-      "nullPointMode": "as empty",
-      "targets": [
-        {
-          "expr": "probe_success",
-          "format": "time_series",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{instance}}",
-          "refId": "A"
-        }
-      ],
-      "title": "Panel Title",
-      "tooltip": {
-        "show": true
-      },
-      "type": "flant-statusmap-panel",
-      "useMax": true,
-      "xAxis": {
-        "labelFormat": "%a %m/%d",
-        "minBucketWidthToShowWeekends": 4,
-        "show": true,
-        "showCrosshair": true,
-        "showWeekends": true
-      },
-      "yAxis": {
-        "show": true,
-        "showCrosshair": false
-      }
-    },
-    {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
       "datasource": "prometheus",
-      "fill": 1,
-      "gridPos": {
-        "h": 9,
-        "w": 24,
-        "x": 0,
-        "y": 18
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
       },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 11
+      },
+      "hiddenSeries": false,
       "id": 4,
       "legend": {
         "avg": false,
@@ -433,9 +675,13 @@
       "lines": true,
       "linewidth": 1,
       "links": [],
-      "minSpan": 2,
+      "maxPerRow": 12,
       "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
       "percentage": false,
+      "pluginVersion": "7.2.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -447,17 +693,37 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(probe_http_duration_seconds) by (instance)",
+          "expr": "sum (quantile_over_time(0.5, probe_http_duration_seconds{routing=\"local\"}[1h]))",
+          "interval": "",
+          "legendFormat": "50%",
+          "refId": "B"
+        },
+        {
+          "expr": "sum (quantile_over_time(0.9, probe_http_duration_seconds{routing=\"local\"}[1h]))",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{instance}}",
+          "legendFormat": "90%",
           "refId": "A"
+        },
+        {
+          "expr": "sum (quantile_over_time(0.95, probe_http_duration_seconds{routing=\"local\"}[1h]))",
+          "interval": "",
+          "legendFormat": "95%",
+          "refId": "C"
+        },
+        {
+          "expr": "sum (quantile_over_time(0.99, probe_http_duration_seconds{routing=\"local\"}[1h]))",
+          "interval": "",
+          "legendFormat": "99%",
+          "refId": "D"
         }
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
-      "title": "http duration",
+      "title": "http quantiles local",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -473,14 +739,16 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:732",
           "format": "short",
-          "label": null,
-          "logBase": 1,
+          "label": "Seconds",
+          "logBase": 2,
           "max": null,
           "min": null,
           "show": true
         },
         {
+          "$$hashKey": "object:733",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -495,7 +763,8 @@
       }
     }
   ],
-  "schemaVersion": 16,
+  "refresh": "10s",
+  "schemaVersion": 26,
   "style": "dark",
   "tags": [
     "speedtest",
@@ -505,7 +774,7 @@
     "list": []
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {
@@ -536,5 +805,5 @@
   "timezone": "browser",
   "title": "internet connection",
   "uid": "o9mIe_Aik",
-  "version": 8
+  "version": 3
 }
