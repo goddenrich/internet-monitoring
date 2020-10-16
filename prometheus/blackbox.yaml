@@ -1,4 +1,4 @@
 - targets:  # url;humanname;routing;switch
-    - http://google.com;google.com;external;internetbox
-    - http://github.com;github.com;external;internetbox
-    - http://192.168.1.254;router;local;internetbox
+    - google.com;google.com;external;internetbox
+    - github.com;github.com;external;internetbox
+    - 192.168.1.254;router;local;internetbox
