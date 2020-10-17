@@ -1,9 +1,10 @@
 
 # A Docker Stack which Monitors your home network
-Here's a quick start to stand-up a Docker [Prometheus](http://prometheus.io/) stack containing Prometheus, Grafana with  [blackbox-exporter](https://github.com/prometheus/blackbox_exporter), [speedtest-exporter](https://github.com/stefanwalther/speedtest-exporter), [homehub-metrics-exporter](https://github.com/jamesnetherton/homehub-metrics-exporter) and [ping-exporter](https://github.com/goddenrich/ping-exporter) to collect and graph home network connections and speed.
+Here's a quick start to stand-up a Docker [Prometheus](http://prometheus.io/) stack containing Prometheus, Grafana with  [blackbox-exporter](https://github.com/prometheus/blackbox_exporter), [speedtest-exporter](https://github.com/MiguelNdeCarvalho/docker-speedtest_exporter), [homehub-metrics-exporter](https://github.com/jamesnetherton/homehub-metrics-exporter) and [smokeping_prober](https://github.com/SuperQ/smokeping_prober) to collect and graph home network connections and speed.
 
 ## Pre-requisites
 Before we get started installing the Prometheus stack. Ensure you install the latest version of docker and [docker-compose](https://docs.docker.com/compose/install/) on your Docker host machine. This has been tested with Docker for Mac and Synology and it works.
+
 
 # Quick Start
 
@@ -26,10 +27,42 @@ docker-compose up
 Goto [http://localhost:3030/d/o9mIe_Aik/internet-connection](http://localhost:3030/d/o9mIe_Aik/internet-connection) (change `localhost` to your docker host ip/name).
 
 ## Configuration
-To change what hosts you ping you change the `targets` section in [/prometheus/pinghosts.yaml](./prometheus/pinghosts.yaml) file.
+You must add the hosts you will smokeping and query in the blackbox exporter. 
+
+Add a file ./prometheus/blackbox.yaml of the format:
+
+```
+- targets:  # url;humanname;routing;switch
+    - google.com;google.com;external;internetbox
+    - github.com;github.com;external;internetbox
+```
+and a file ./docker-compose.override.yaml
+```
+services:
+  smokeping:
+    command:
+      - 'google.com'
+      - 'github.com'
+```
+making sure the two have the same set of hosts
+
+You will need to have an environment file for your some secrets for the hub and grafana.
+
+Create a file hub/auth.env file with the following:
+
+```
+HUB_USERNAME=[admin username]
+HUB_PASSWORD=[admin password]
+```
+
+Create a file grafana/auth.env file with the following:
+
+```
+GF_SECURITY_ADMIN_PASSWORD=[choose some password]
+GF_SECURITY_ADMIN_USER=[choose some password]
+```
 
 For speedtest the only relevant configuration is how often you want the check to happen. It is at 5 minutes by default which might be too much if you have limit on downloads. This is changed by editing `scrape_interval` under `speedtest` in [/prometheus/prometheus.yml](./prometheus/prometheus.yml).
-
 
 Once configurations are done let's start it up. From the /prometheus project directory run the following command:
 
@@ -38,9 +71,6 @@ Once configurations are done let's start it up. From the /prometheus project dir
 That's it. docker-compose builds the entire Grafana and Prometheus stack automagically. 
 
 The Grafana Dashboard is now accessible via: `http://<Host IP Address>:3030` for example http://localhost:3030
-
-username - admin
-password - wonka (Password is stored in the `config.monitoring` env file)
 
 The DataSource and Dashboard for Grafana are automatically provisioned. 
 

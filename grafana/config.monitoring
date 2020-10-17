@@ -1,3 +1,2 @@
-GF_SECURITY_ADMIN_PASSWORD=wonka
+GF_INSTALL_PLUGINS=flant-statusmap-panel
 GF_USERS_ALLOW_SIGN_UP=false
- GF_INSTALL_PLUGINS=flant-statusmap-panel

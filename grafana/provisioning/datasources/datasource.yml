@@ -30,7 +30,7 @@ datasources:
   # <string> basic auth username
   basicAuthUser: admin
   # <string> basic auth password
-  basicAuthPassword: foobar
+  basicAuthPassword:
   # <bool> enable/disable with credentials headers
   withCredentials:
   # <bool> mark as default datasource. Max one per org
@@ -45,6 +45,7 @@ datasources:
     tlsCACert: "..."
     tlsClientCert: "..."
     tlsClientKey: "..."
+    basicAuthPassword: foobar
   version: 1
   # <bool> allow users to edit datasources from the UI.
   editable: true

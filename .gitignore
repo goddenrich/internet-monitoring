@@ -1,2 +1,5 @@
 .env
 *.sw?
+docker-compose.override.yaml
+hub/auth.env
+grafana/auth.env
