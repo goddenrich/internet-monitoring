@@ -21,12 +21,13 @@ services:
       - '--web.console.templates=/usr/share/prometheus/consoles'
     ports:
       - 9090:9090
+    restart: always
     links:
       - blackbox:blackbox
       - smokeping:smokeping
       - nodeexp:nodeexp
       - speedtest:speedtest
-      # - hub:hub
+      - hub:hub
     networks:
       - back-tier
 
@@ -41,23 +42,22 @@ services:
       - 3000:3000
     env_file:
       - ./grafana/config.monitoring
-    restart: unless-stopped
+    restart: always
     networks:
       - back-tier
       - front-tier
  
-  # hub:
-  #   tty: true
-  #   stdin_open: true
-  #   expose:
-  #     - 19092
-  #   ports:
-  #     - 19092:19092
-  #   image: jamesnetherton/homehub-metrics-exporter
-  #   command:
-  #     - '--hub-password='
-  #   networks:
-  #     - back-tier
+  hub:
+    tty: true
+    stdin_open: true
+    expose:
+      - 19092
+    ports:
+      - 19092:19092
+    restart: always
+    image: goddenrich/homehub-metrics-exporter
+    networks:
+      - back-tier
 
   blackbox:
     tty: true
@@ -66,6 +66,7 @@ services:
       - 9115
     ports:
       - 9115:9115
+    restart: always
     image: prom/blackbox-exporter
     volumes:
       - ./blackbox/config:/config
@@ -79,7 +80,7 @@ services:
     container_name: speedtest-exporter
     ports:
       - 9800:9800
-    restart: unless-stopped
+    restart: always
     networks:
       - back-tier
   
@@ -108,6 +109,7 @@ services:
       - 9374
     ports:
       - 9374:9374
+    restart: always
     image: superque/smokeping-prober:v0.3.1
     command:
       - 'google.com'

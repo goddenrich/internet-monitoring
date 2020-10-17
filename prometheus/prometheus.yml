@@ -11,9 +11,9 @@ rule_files:
 
 scrape_configs:
 
-  # - job_name: 'hub'
-  #   static_configs:
-  #     - targets: ['hub:19092']
+  - job_name: 'hub'
+    static_configs:
+      - targets: ['hub:19092']
 
   - job_name: 'prometheus'
     scrape_interval: 5s

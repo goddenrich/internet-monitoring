@@ -17,7 +17,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1602870611272,
+  "iteration": 1602938152013,
   "links": [],
   "panels": [
     {
@@ -445,26 +445,26 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "histogram_quantile(0.5, rate(smokeping_response_duration_seconds_bucket{host=~\"$instance\"}[5m]))",
+              "expr": "histogram_quantile(0.5, sum by (le) (rate(smokeping_response_duration_seconds_bucket{host=~\"$instance\"}[5m])))",
               "interval": "",
               "legendFormat": "0.5",
               "refId": "C"
             },
             {
-              "expr": "histogram_quantile(0.9, rate(smokeping_response_duration_seconds_bucket{host=~\"$instance\"}[5m]))",
+              "expr": "histogram_quantile(0.9, sum by (le) (rate(smokeping_response_duration_seconds_bucket{host=~\"$instance\"}[5m])))",
               "hide": false,
               "interval": "",
               "legendFormat": "0.9",
               "refId": "B"
             },
             {
-              "expr": "histogram_quantile(0.95, rate(smokeping_response_duration_seconds_bucket{host=~\"$instance\"}[5m]))",
+              "expr": "histogram_quantile(0.95, sum by (le) (rate(smokeping_response_duration_seconds_bucket{host=~\"$instance\"}[5m])))",
               "interval": "",
               "legendFormat": "0.95",
               "refId": "A"
             },
             {
-              "expr": "histogram_quantile(0.99, rate(smokeping_response_duration_seconds_bucket{host=~\"$instance\"}[5m]))",
+              "expr": "histogram_quantile(0.99, sum by (le) (rate(smokeping_response_duration_seconds_bucket{host=~\"$instance\"}[5m])))",
               "interval": "",
               "legendFormat": "0.99",
               "refId": "D"
@@ -789,7 +789,7 @@
           "renderer": "flot",
           "repeat": null,
           "repeatDirection": "v",
-          "repeatIteration": 1602870611272,
+          "repeatIteration": 1602938152013,
           "repeatPanelId": 18,
           "repeatedByRow": true,
           "scopedVars": {
@@ -926,7 +926,7 @@
           "renderer": "flot",
           "repeat": "host",
           "repeatDirection": "h",
-          "repeatIteration": 1602870611272,
+          "repeatIteration": 1602938152013,
           "repeatPanelId": 4,
           "repeatedByRow": true,
           "scopedVars": {
@@ -1048,7 +1048,7 @@
           "pluginVersion": "7.2.1",
           "repeat": null,
           "repeatDirection": "v",
-          "repeatIteration": 1602870611272,
+          "repeatIteration": 1602938152013,
           "repeatPanelId": 28,
           "repeatedByRow": true,
           "reverseYBuckets": false,
@@ -1095,7 +1095,7 @@
           "yBucketSize": null
         }
       ],
-      "repeatIteration": 1602870611272,
+      "repeatIteration": 1602938152013,
       "repeatPanelId": 30,
       "scopedVars": {
         "instance": {
@@ -1162,7 +1162,7 @@
           "renderer": "flot",
           "repeat": null,
           "repeatDirection": "v",
-          "repeatIteration": 1602870611272,
+          "repeatIteration": 1602938152013,
           "repeatPanelId": 18,
           "repeatedByRow": true,
           "scopedVars": {
@@ -1299,7 +1299,7 @@
           "renderer": "flot",
           "repeat": "host",
           "repeatDirection": "h",
-          "repeatIteration": 1602870611272,
+          "repeatIteration": 1602938152013,
           "repeatPanelId": 4,
           "repeatedByRow": true,
           "scopedVars": {
@@ -1421,7 +1421,7 @@
           "pluginVersion": "7.2.1",
           "repeat": null,
           "repeatDirection": "v",
-          "repeatIteration": 1602870611272,
+          "repeatIteration": 1602938152013,
           "repeatPanelId": 28,
           "repeatedByRow": true,
           "reverseYBuckets": false,
@@ -1468,7 +1468,7 @@
           "yBucketSize": null
         }
       ],
-      "repeatIteration": 1602870611272,
+      "repeatIteration": 1602938152013,
       "repeatPanelId": 30,
       "scopedVars": {
         "instance": {
@@ -1554,5 +1554,5 @@
   "timezone": "browser",
   "title": "internet connection",
   "uid": "o9mIe_Aik",
-  "version": 9
+  "version": 10
 }
