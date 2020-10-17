@@ -16,8 +16,7 @@
   "editable": true,
   "gnetId": 12412,
   "graphTooltip": 0,
-  "id": 3,
-  "iteration": 1602859745268,
+  "iteration": 1602950558336,
   "links": [],
   "panels": [
     {
@@ -337,7 +336,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1602859745268,
+      "repeatIteration": 1602950558336,
       "repeatPanelId": 2,
       "scopedVars": {
         "instance": {
@@ -361,8 +360,9 @@
       "steppedLine": true,
       "targets": [
         {
-          "expr": "sum(probe_icmp_duration_seconds{phase=\"rtt\",instance=~\"$instance\"}) by (instance) > 0",
+          "expr": "sum(probe_http_duration_seconds{instance=~\"$instance\"}) by (instance) > 0",
           "instant": false,
+          "interval": "",
           "legendFormat": "RTT",
           "refId": "A"
         },
@@ -466,7 +466,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1602859745268,
+      "repeatIteration": 1602950558336,
       "repeatPanelId": 2,
       "scopedVars": {
         "instance": {
@@ -490,8 +490,9 @@
       "steppedLine": true,
       "targets": [
         {
-          "expr": "sum(probe_icmp_duration_seconds{phase=\"rtt\",instance=~\"$instance\"}) by (instance) > 0",
+          "expr": "sum(probe_http_duration_seconds{instance=~\"$instance\"}) by (instance) > 0",
           "instant": false,
+          "interval": "",
           "legendFormat": "RTT",
           "refId": "A"
         },
@@ -545,7 +546,7 @@
       }
     }
   ],
-  "refresh": false,
+  "refresh": "10s",
   "schemaVersion": 26,
   "style": "dark",
   "tags": [],
@@ -554,9 +555,13 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
-          "text": "All",
-          "value": "$__all"
+          "selected": true,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
         },
         "datasource": "prometheus",
         "definition": "label_values(probe_success, instance)",
@@ -570,7 +575,7 @@
         "refresh": 2,
         "regex": "",
         "skipUrlSync": false,
-        "sort": 0,
+        "sort": 5,
         "tagValuesQuery": "",
         "tags": [],
         "tagsQuery": "",
@@ -600,5 +605,5 @@
   "timezone": "",
   "title": "Blackbox probe",
   "uid": "oe-msimGz",
-  "version": 3
+  "version": 1
 }
