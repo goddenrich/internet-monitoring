@@ -326,7 +326,7 @@
         "y": 5
       },
       "id": 40,
-      "maxPerRow": 8,
+      "maxPerRow": 6,
       "options": {
         "colorMode": "value",
         "graphMode": "area",

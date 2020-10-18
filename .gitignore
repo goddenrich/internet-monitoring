@@ -1,5 +1,6 @@
 .env
 *.sw?
+prometheus/blackbox.yaml
 docker-compose.override.yaml
 hub/auth.env
 grafana/auth.env
