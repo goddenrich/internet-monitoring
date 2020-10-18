@@ -113,7 +113,7 @@ services:
     ports:
       - 9374:9374
     restart: always
-    image: superque/smokeping-prober:v0.3.1
+    image: quay.io/superq/smokeping-prober:master
     command:
       - 'google.com'
       - 'github.com'
