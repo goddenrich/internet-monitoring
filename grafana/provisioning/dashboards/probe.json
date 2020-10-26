@@ -16,7 +16,7 @@
   "editable": true,
   "gnetId": 12412,
   "graphTooltip": 0,
-  "iteration": 1602950558336,
+  "iteration": 1603722601260,
   "links": [],
   "panels": [
     {
@@ -29,6 +29,7 @@
         "colorScale": "sqrt",
         "colorScheme": "interpolateRdYlGn",
         "exponent": 0.5,
+        "min": 0,
         "mode": "spectrum"
       },
       "dataFormat": "tsbuckets",
@@ -336,7 +337,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1602950558336,
+      "repeatIteration": 1603722601260,
       "repeatPanelId": 2,
       "scopedVars": {
         "instance": {
@@ -466,13 +467,13 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1602950558336,
+      "repeatIteration": 1603722601260,
       "repeatPanelId": 2,
       "scopedVars": {
         "instance": {
           "selected": false,
-          "text": "192.168.1.254",
-          "value": "192.168.1.254"
+          "text": "https://192.168.1.1:8443",
+          "value": "https://192.168.1.1:8443"
         }
       },
       "seriesOverrides": [
