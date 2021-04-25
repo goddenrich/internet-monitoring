@@ -353,7 +353,7 @@
       },
       "targets": [
         {
-          "expr": "(rate(smokeping_requests_total{host=~\"$instance\"}[10m]) -\nrate(smokeping_response_duration_seconds_count{host=~\"$instance\"}[10m]))/rate(smokeping_requests_total{host=~\"$instance\"}[10m])",
+          "expr": "(rate(smokeping_requests_total{host=~\"$instance\"}[10m]) -\nrate(smokeping_response_duration_seconds_count{host=~\"$instance\"}[10m]))/rate(smokeping_requests_total{host=~\"$instance\"}[10m]) OR on() vector(1)"
           "interval": "",
           "legendFormat": "{{host}}",
           "refId": "A"
@@ -424,7 +424,7 @@
       },
       "targets": [
         {
-          "expr": "(rate(smokeping_requests_total{host=~\"$instance\"}[10m]) -\nrate(smokeping_response_duration_seconds_count{host=~\"$instance\"}[10m]))/rate(smokeping_requests_total{host=~\"$instance\"}[10m])",
+          "expr": "(rate(smokeping_requests_total{host=~\"$instance\"}[10m]) -\nrate(smokeping_response_duration_seconds_count{host=~\"$instance\"}[10m]))/rate(smokeping_requests_total{host=~\"$instance\"}[10m]) OR on() vector(1)"
           "interval": "",
           "legendFormat": "{{host}}",
           "refId": "A"
@@ -495,7 +495,7 @@
       },
       "targets": [
         {
-          "expr": "(rate(smokeping_requests_total{host=~\"$instance\"}[10m]) -\nrate(smokeping_response_duration_seconds_count{host=~\"$instance\"}[10m]))/rate(smokeping_requests_total{host=~\"$instance\"}[10m])",
+          "expr": "(rate(smokeping_requests_total{host=~\"$instance\"}[10m]) -\nrate(smokeping_response_duration_seconds_count{host=~\"$instance\"}[10m]))/rate(smokeping_requests_total{host=~\"$instance\"}[10m]) OR on() vector(1)"
           "interval": "",
           "legendFormat": "{{host}}",
           "refId": "A"
